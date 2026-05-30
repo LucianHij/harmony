@@ -11,10 +11,9 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
     try {
-      const res = await fetch('https://formspree.io/f/REPLACE_ME', {
+      const res = await fetch('/', {
         method: 'POST',
         body: data,
-        headers: { Accept: 'application/json' },
       });
       if (res.ok) {
         setStatus('success');
@@ -28,7 +27,8 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 max-w-xl mx-auto">
+    <form onSubmit={handleSubmit} name="contact" method="POST" netlify className="space-y-5 max-w-xl mx-auto">
+      <input type="hidden" name="form-name" value="contact" />
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-text-dark mb-1">
           Numele tău
