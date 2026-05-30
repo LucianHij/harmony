@@ -1,0 +1,65 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Hero from '@components/Hero.astro';
+import { projects } from '@data/projects';
+
+const project = projects.find(p => p.slug === 'oameni-ai-strazii')!;
+---
+
+<BaseLayout
+  title={project.title}
+  description={project.description}
+>
+  <Hero
+    headline={project.title}
+    subheadline={project.description}
+    ctaPrimary={{ text: 'Vreau să ajut', href: '/contact' }}
+  />
+
+  <!-- Project details -->
+  <section class="section-padding bg-white">
+    <div class="container-site max-w-3xl">
+      <div class="fade-up">
+        <h2 class="text-2xl font-bold text-text-dark mb-4">Despre proiect</h2>
+        <p class="text-text-muted leading-relaxed mb-8">
+          {project.description}
+        </p>
+      </div>
+
+      <!-- Who it's for -->
+      <div class="fade-up mt-10">
+        <h3 class="text-xl font-bold text-text-dark mb-3">Cui se adresează</h3>
+        <p class="text-text-muted">{project.audience}</p>
+      </div>
+
+      <!-- How to help -->
+      <div class="fade-up mt-10">
+        <h3 class="text-xl font-bold text-text-dark mb-4">Cum te poți implica</h3>
+        <ul class="space-y-3">
+          {project.howToHelp.map(item => (
+            <li class="flex items-start gap-3">
+              <span class="text-primary font-bold mt-1">✓</span>
+              <span class="text-text-muted">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-padding bg-amber-50">
+    <div class="container-site text-center fade-up">
+      <h2 class="text-2xl font-bold text-text-dark mb-4">Gata să te implici?</h2>
+      <p class="text-text-muted mb-8 max-w-xl mx-auto">
+        Trimite-ne un mesaj și vom discuta cum poți fi parte din această misiune.
+      </p>
+      <a
+        href="/contact"
+        class="px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary-dark transition-colors inline-block"
+      >
+        Contactează-ne
+      </a>
+    </div>
+  </section>
+</BaseLayout>

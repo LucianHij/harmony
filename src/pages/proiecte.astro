@@ -1,0 +1,42 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Hero from '@components/Hero.astro';
+import ProjectCard from '@components/ProjectCard.astro';
+import { projects } from '@data/projects';
+---
+
+<BaseLayout
+  title="Proiecte"
+  description="Patru programe active: Oameni ai Străzii, Micii Exploratori, Penitenciar, și Alpha."
+>
+  <Hero
+    headline="Cum ne implicăm"
+    subheadline="Patru programe active, o singură misiune: să servim comunitatea și să oferim speranță."
+    ctaPrimary={{ text: 'Contactează-ne', href: '/contact' }}
+  />
+
+  <!-- Projects grid -->
+  <section class="section-padding bg-white">
+    <div class="container-site">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        {projects.map(p => <ProjectCard project={p} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to action -->
+  <section class="section-padding bg-bg-warm">
+    <div class="container-site text-center max-w-2xl mx-auto fade-up">
+      <h2 class="text-2xl font-bold text-text-dark mb-4">Gata să te implici?</h2>
+      <p class="text-text-muted mb-8">
+        Contactează-ne cu orice întrebare. Suntem aici să-ți spunem mai mult despre fiecare proiect.
+      </p>
+      <a
+        href="/contact"
+        class="px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary-dark transition-colors inline-block"
+      >
+        Trimite-ne un mesaj
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,113 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Hero from '@components/Hero.astro';
+import AlphaCourseCard from '@components/AlphaCourseCard.astro';
+import { alphaGroups } from '@data/alpha';
+---
+
+<BaseLayout
+  title="Alpha"
+  description="Un curs de explorare a vieții și credinței. Pentru oricine are curiozitate."
+>
+  <Hero
+    headline="Alpha — Întrebări mari, conversații reale"
+    subheadline="Un curs gratuit unde oricine poate pune întrebări și explora teme mari despre viață și sens, fără presiuni."
+    ctaPrimary={{ text: 'Înscrie-te acum', href: '/contact' }}
+  />
+
+  <!-- What is Alpha -->
+  <section class="section-padding bg-white">
+    <div class="container-site max-w-3xl mx-auto">
+      <div class="fade-up">
+        <h2 class="text-3xl font-bold text-text-dark mb-6">Ce este Alpha?</h2>
+        <p class="text-text-muted text-lg leading-relaxed mb-6">
+          Alpha este un curs de șapte sesiuni conceput pentru oricine dorește să exploreze întrebări mari despre viață,
+          sens și credință. Nu este o predică, ci o oportunitate de a asculta perspective diferite și de a discuta fără
+          presiuni.
+        </p>
+        <p class="text-text-muted text-lg leading-relaxed mb-6">
+          Fiecare sesiune include o discuție de 20 de minute, apoi grupuri mici de conversație. Ospitalitatea și
+          cuvintele gratis sunt parte din experiență.
+        </p>
+        <p class="text-text-muted text-lg leading-relaxed">
+          <strong>Nu trebuie să crezi nimic în prealabil.</strong> Alpha este pentru toți — oamenii curioși, sceptici,
+          și cei care caută doar o comunitate.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alpha groups -->
+  <section class="section-padding bg-bg-warm">
+    <div class="container-site">
+      <div class="text-center mb-12 fade-up">
+        <h2 class="text-3xl font-bold text-text-dark mb-4">Alege grupul tău</h2>
+        <p class="text-text-muted max-w-xl mx-auto">Avem grupuri dedicate pentru fiecare etapă a vieții.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {alphaGroups.map(group => <AlphaCourseCard group={group} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-padding bg-white">
+    <div class="container-site max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-text-dark mb-8 fade-up">Întrebări frecvente</h2>
+
+      <details class="fade-up rounded-lg border border-stone-200 p-6 mb-4 open:bg-indigo-50 transition-colors">
+        <summary class="font-semibold text-text-dark cursor-pointer hover:text-primary transition-colors">
+          Este Alpha religios?
+        </summary>
+        <p class="text-text-muted mt-4 leading-relaxed">
+          Alpha este o explorare onestă a credinței și spiritualității. Dar nu este forțat pe tine. Te-ai invited să
+          pui întrebări și să gândești critic.
+        </p>
+      </details>
+
+      <details class="fade-up rounded-lg border border-stone-200 p-6 mb-4 open:bg-indigo-50 transition-colors">
+        <summary class="font-semibold text-text-dark cursor-pointer hover:text-primary transition-colors">
+          Cât costă?
+        </summary>
+        <p class="text-text-muted mt-4 leading-relaxed">
+          Alpha este complet gratuit. Nu sunt vânzări, donații forțate, sau cevă ascuns. Doar o comunitate deschisă.
+        </p>
+      </details>
+
+      <details class="fade-up rounded-lg border border-stone-200 p-6 mb-4 open:bg-indigo-50 transition-colors">
+        <summary class="font-semibold text-text-dark cursor-pointer hover:text-primary transition-colors">
+          Trebuie să merg la toate sesiunile?
+        </summary>
+        <p class="text-text-muted mt-4 leading-relaxed">
+          Nu. Vino când poți, pleacă când vrei. Nu există obligații. Dar cursul este mai bun dacă participi la mai
+          multe sesiuni.
+        </p>
+      </details>
+
+      <details class="fade-up rounded-lg border border-stone-200 p-6 mb-4 open:bg-indigo-50 transition-colors">
+        <summary class="font-semibold text-text-dark cursor-pointer hover:text-primary transition-colors">
+          Cum mă înscriu?
+        </summary>
+        <p class="text-text-muted mt-4 leading-relaxed">
+          Contactează-ne cu grupul pe care îl alegi, și te vom ajuta cu detaliile. Nu este complicat.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section-padding bg-violet-700 text-white">
+    <div class="container-site text-center max-w-2xl mx-auto fade-up">
+      <h2 class="text-3xl font-bold mb-4">Ești curios?</h2>
+      <p class="text-violet-200 mb-8">
+        Primii pași sunt mereu ușori. Contactează-ne și vorbim despre ce ar fi potrivit pentru tine.
+      </p>
+      <a
+        href="/contact"
+        class="px-8 py-4 bg-white text-violet-700 font-bold rounded-xl hover:bg-violet-50 transition-colors inline-block"
+      >
+        Contactează-ne despre Alpha
+      </a>
+    </div>
+  </section>
+</BaseLayout>

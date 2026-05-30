@@ -1,0 +1,44 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-stone-900 text-stone-300">
+  <div class="container-site py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- Identity -->
+      <div>
+        <p class="font-bold text-white text-lg mb-2">Biserica Harmony</p>
+        <p class="text-sm leading-relaxed">
+          O comunitate deschisă din București. Duminica la 10:00 &amp; 11:00–12:00.
+        </p>
+        <address class="mt-4 not-italic text-sm">
+          Str. Exemplu nr. 12, București, Sector 2
+        </address>
+      </div>
+
+      <!-- Links -->
+      <nav aria-label="Linkuri footer">
+        <p class="font-semibold text-white mb-3">Pagini</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/" class="hover:text-white transition-colors">Acasă</a></li>
+          <li><a href="/proiecte" class="hover:text-white transition-colors">Proiecte</a></li>
+          <li><a href="/alpha" class="hover:text-white transition-colors">Alpha</a></li>
+          <li><a href="/donatii" class="hover:text-white transition-colors">Donații</a></li>
+          <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Social -->
+      <div>
+        <p class="font-semibold text-white mb-3">Urmărește-ne</p>
+        <div class="flex gap-4 text-sm">
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"
+             class="hover:text-white transition-colors">Facebook</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"
+             class="hover:text-white transition-colors">Instagram</a>
+        </div>
+        <p class="mt-6 text-xs text-stone-500">© {year} Asociația Harmony</p>
+      </div>
+    </div>
+  </div>
+</footer>

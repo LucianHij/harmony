@@ -1,0 +1,106 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Hero from '@components/Hero.astro';
+import DonationSteps from '@components/DonationSteps.astro';
+---
+
+<BaseLayout
+  title="Donații"
+  description="Susține Biserica Harmony și proiectele sociale. Donații sigure prin Asociația Harmony."
+>
+  <Hero
+    headline="Susține misiunea"
+    subheadline="Donațiile tale ajută o comunitate deschisă să servească mai bine."
+    ctaPrimary={{ text: 'Vreau să donez', href: '#donation-steps' }}
+  />
+
+  <!-- Church vs Association explanation -->
+  <section class="section-padding bg-white">
+    <div class="container-site">
+      <div class="mb-12 fade-up">
+        <h2 class="text-3xl font-bold text-text-dark mb-6">Biserica și Asociația — ce este diferența?</h2>
+        <p class="text-text-muted text-lg leading-relaxed">
+          Biserica Harmony este o comunitate spirituală. Asociația Harmony este o entitate juridică separată prin care
+          gestionăm donații și lucrări sociale. <strong>Ambele sunt aceleași misiune</strong> — pur și simplu, Asociația
+          permite transparență legală și deduceri fiscale pentru donatori.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Church donations -->
+        <div class="fade-up rounded-2xl border-2 border-primary p-8">
+          <h3 class="text-xl font-bold text-text-dark mb-3">Donații către Biserică</h3>
+          <p class="text-text-muted mb-4 text-sm">
+            Direct la Biserica Harmony pentru operațiuni zilnice, chirie, și duminici.
+          </p>
+          <ul class="space-y-2 text-sm text-text-muted">
+            <li>
+              <strong class="text-text-dark">Ce susții:</strong>
+              Programul de duminică, spațiul, evenimentele comunitare
+            </li>
+            <li class="text-xs text-stone-400 mt-3">
+              IBANuri și instrucțiuni în secțiunea "Modalități de donație" mai jos
+            </li>
+          </ul>
+        </div>
+
+        <!-- Association donations -->
+        <div class="fade-up rounded-2xl border-2 border-accent p-8">
+          <h3 class="text-xl font-bold text-text-dark mb-3">Donații către Asociație</h3>
+          <p class="text-text-muted mb-4 text-sm">
+            Pentru proiectele sociale cu impact — Oameni ai Străzii, Micii Exploratori, Penitenciar.
+          </p>
+          <ul class="space-y-2 text-sm text-text-muted">
+            <li>
+              <strong class="text-text-dark">Ce susții:</strong>
+              Mese calde, programe educaționale, reintegrare socială
+            </li>
+            <li class="text-sm text-accent font-medium mt-3">
+              ✓ Deducere fiscală 20% din impozit (pentru donări anuale &gt; 2% din venit)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donation methods -->
+  <section id="donation-steps" class="section-padding bg-bg-warm">
+    <div class="container-site mb-12">
+      <h2 class="text-3xl font-bold text-text-dark mb-8 fade-up">Modalități de donație</h2>
+    </div>
+    <DonationSteps />
+  </section>
+
+  <!-- Transparency -->
+  <section class="section-padding bg-white">
+    <div class="container-site max-w-3xl mx-auto">
+      <div class="fade-up">
+        <h2 class="text-2xl font-bold text-text-dark mb-4">Transparență și încredere</h2>
+        <p class="text-text-muted leading-relaxed mb-4">
+          Fiecare donație este gestionată cu integritate. Asociația Harmony publică rapoarte anuale despre cum sunt
+          folosite resursele. Dacă vrei mai multe detalii, nu ezita să ne contactezi.
+        </p>
+        <p class="text-text-muted leading-relaxed">
+          Suntem aici pentru a servi, nu pentru a cere. Dar apreciem enorm dacă poți susține misiunea.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-padding bg-primary text-white">
+    <div class="container-site text-center max-w-2xl mx-auto fade-up">
+      <h2 class="text-2xl font-bold mb-4">Întrebări despre donații?</h2>
+      <p class="text-indigo-200 mb-8">
+        Suntem deschiși la orice discuții. Contactează-ne cu orice clarificări.
+      </p>
+      <a
+        href="/contact"
+        class="px-8 py-4 bg-white text-primary font-bold rounded-xl hover:bg-indigo-50 transition-colors inline-block"
+      >
+        Contactează-ne
+      </a>
+    </div>
+  </section>
+</BaseLayout>
