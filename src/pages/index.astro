@@ -50,8 +50,12 @@ import { projects } from '@data/projects';
   </section>
 
   <!-- Alpha teaser -->
-  <section class="section-padding bg-indigo-700 text-white">
-    <div class="container-site text-center max-w-2xl mx-auto fade-up">
+  <section class="section-padding bg-gradient-to-br from-indigo-700 to-indigo-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-30 pointer-events-none">
+      <div class="absolute -right-32 -top-32 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+      <div class="absolute -left-32 -bottom-32 w-96 h-96 bg-indigo-300/5 rounded-full blur-3xl"></div>
+    </div>
+    <div class="container-site text-center max-w-2xl mx-auto fade-up relative z-10">
       <h2 class="text-3xl font-bold mb-4">Alpha — Întrebări mari, conversații reale</h2>
       <p class="text-indigo-200 mb-8 leading-relaxed">
         Nu trebuie să crezi nimic în prealabil. Alpha e un spațiu relaxat pentru cei curioși despre credință, sens
@@ -59,7 +63,7 @@ import { projects } from '@data/projects';
       </p>
       <a
         href="/alpha"
-        class="px-8 py-4 bg-white text-indigo-700 font-bold rounded-xl hover:bg-indigo-50 transition-colors inline-block"
+        class="px-8 py-4 bg-white text-indigo-700 font-bold rounded-xl hover:bg-indigo-50 transition-all duration-300 inline-block hover:scale-105 active:scale-95 shadow-lg hover:shadow-2xl"
       >
         Află mai mult despre Alpha
       </a>
@@ -67,15 +71,18 @@ import { projects } from '@data/projects';
   </section>
 
   <!-- Visit CTA -->
-  <section class="section-padding bg-accent">
-    <div class="container-site text-center fade-up">
+  <section class="section-padding bg-gradient-to-br from-accent to-amber-600 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20 pointer-events-none">
+      <div class="absolute -right-40 -bottom-40 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+    </div>
+    <div class="container-site text-center fade-up relative z-10">
       <h2 class="text-3xl font-bold text-white mb-4">Vino duminica aceasta</h2>
       <p class="text-amber-100 mb-8 max-w-lg mx-auto">
         Prima vizită e mereu puțin intimidantă. Suntem aici să te facem să te simți acasă.
       </p>
       <a
         href="/contact"
-        class="px-8 py-4 bg-white text-amber-700 font-bold rounded-xl hover:bg-amber-50 transition-colors shadow-md inline-block"
+        class="px-8 py-4 bg-white text-amber-700 font-bold rounded-xl hover:bg-amber-50 transition-all duration-300 shadow-lg hover:shadow-2xl inline-block hover:scale-105 active:scale-95"
       >
         Planifică prima vizită
       </a>

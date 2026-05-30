@@ -26,14 +26,212 @@
 }
 
 @layer utilities {
+  /* Premium entrance animations */
   .fade-up {
     opacity: 0;
     transform: translateY(24px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .fade-up.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Staggered animation delays */
+  .fade-up:nth-child(1) { transition-delay: 0s; }
+  .fade-up:nth-child(2) { transition-delay: 0.1s; }
+  .fade-up:nth-child(3) { transition-delay: 0.2s; }
+  .fade-up:nth-child(4) { transition-delay: 0.3s; }
+  .fade-up:nth-child(n+5) { transition-delay: calc(0.3s + (var(--index, 0) * 0.1s)); }
+
+  /* Parallax effect for hero sections */
+  .parallax-content {
+    transition: transform 0.3s ease-out;
+  }
+
+  /* Smooth gradient animations */
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .gradient-animate {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  /* Glow effects for premium feel */
+  .glow-sm {
+    box-shadow: 0 0 12px rgba(79, 70, 229, 0.15);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .glow-sm:hover {
+    box-shadow: 0 0 24px rgba(79, 70, 229, 0.25);
+  }
+
+  .glow-md {
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.2);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .glow-md:hover {
+    box-shadow: 0 0 40px rgba(79, 70, 229, 0.3);
+  }
+
+  /* Enhanced card hover effects */
+  .card-hover {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Button scale animation */
+  .btn-scale {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .btn-scale:active {
+    transform: scale(0.98);
+  }
+
+  /* Focus ring with glow */
+  .focus-glow {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary;
+    transition: all 0.2s ease;
+  }
+
+  .focus-glow:focus {
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1), 0 0 12px rgba(79, 70, 229, 0.3);
+  }
+
+  /* Smooth height transition for details */
+  details {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  details[open] {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  details > summary {
+    transition: all 0.2s ease;
+  }
+
+  details:hover > summary {
+    color: rgb(79, 70, 229);
+  }
+
+  /* Link underline animation */
+  .link-accent {
+    position: relative;
+    color: rgb(79, 70, 229);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .link-accent::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(79, 70, 229);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .link-accent:hover::after {
+    width: 100%;
+  }
+
+  /* Smooth section backgrounds */
+  @keyframes bg-pulse {
+    0%, 100% {
+      background-color: rgba(255, 255, 255, 0);
+    }
+    50% {
+      background-color: rgba(79, 70, 229, 0.02);
+    }
+  }
+
+  .section-accent-hover {
+    transition: all 0.6s ease;
+  }
+
+  /* Input focus enhancement */
+  input:focus,
+  textarea:focus {
+    transition: all 0.3s ease;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    transition: color 0.3s ease;
+  }
+
+  input:focus::placeholder,
+  textarea:focus::placeholder {
+    color: rgba(120, 113, 108, 0.5);
+  }
+
+  /* Badge/tag animations */
+  .badge-animate {
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .badge-animate:hover {
+    transform: scale(1.1) rotate(2deg);
+  }
+
+  /* Smooth text transitions */
+  .text-transition {
+    transition: color 0.3s ease;
+  }
+
+  /* Status message animations */
+  .status-enter {
+    animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Scroll reveal for sections */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s,
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
   }
 }
